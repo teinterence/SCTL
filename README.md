@@ -11,7 +11,7 @@
 
 **請仔細閱讀以下聲明：**
 
-1. 本工具僅供個人學習和研究使用，不得用於任何商業用途
+1. 本工具或本工具產出之文本採[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant)不得用於任何商業行為
 2. 本工具使用官方開放的API介面[(星際公民官方開放之社群本地化)](https://robertsspaceindustries.com/spectrum/community/SC/forum/1/thread/star-citizen-community-localization-update/6258461)，但使用本工具可能違反[星際公民官方ToS (Term of Service 服務條款)](https://robertsspaceindustries.com/en/tos)，使用者需自行承擔所有風險
 3. 因使用本工具導致的任何帳號問題（包括但不限於封禁、資料遺失等），開發者概不負責
 4. 本專案產出之文本僅透過Google雲端硬碟發布
