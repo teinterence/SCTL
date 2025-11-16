@@ -33,10 +33,11 @@ def encode_text(text, char_to_code):
     for char in text:
         if char in char_to_code:
             encoded_parts.append(f'@{char_to_code[char]}')
-        else:
-            # 如果字符不在編碼表中，保留原字符
-            unknown_chars.append(char)
+        elif ord(char) >= 32 and ord(char) <= 126:
             encoded_parts.append(char)
+        else:
+            # 如果字符不在編碼表中且不是 ASCII 字符，才視為未知字符
+            unknown_chars.append(char)
     
     # 組合成最終格式
     encoded_text = '[zh]  ' + ''.join(encoded_parts)
@@ -55,7 +56,7 @@ def main():
     char_to_code = load_encoding_table(args.encoding)
     print(f'已載入 {len(char_to_code)} 個字符編碼\n')
     print('=' * 60)
-    print('繁體中文編碼工具 - 無限循環模式')
+    print('繁體中文編碼工具')
     print('輸入繁體中文後按 Enter 即可編碼並複製到剪貼簿')
     print('輸入 "exit" 或 "quit" 可退出程式')
     print('=' * 60)

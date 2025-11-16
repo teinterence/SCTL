@@ -1,0 +1,1 @@
+.\.venv\Scripts\python.exe -m PyInstaller encode_tw.spec --clean
