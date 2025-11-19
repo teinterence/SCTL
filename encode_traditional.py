@@ -29,12 +29,16 @@ def encode_text(text, char_to_code):
     """將文本轉換為編碼格式"""
     encoded_parts = []
     unknown_chars = []
-    
+    is_last_coded = False
     for char in text:
         if char in char_to_code:
             encoded_parts.append(f'@{char_to_code[char]}')
+            is_last_coded = True
         elif ord(char) >= 32 and ord(char) <= 126:
+            if is_last_coded:
+                encoded_parts.append(' ')
             encoded_parts.append(char)
+            is_last_coded = False
         else:
             # 如果字符不在編碼表中且不是 ASCII 字符，才視為未知字符
             unknown_chars.append(char)
