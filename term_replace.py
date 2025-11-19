@@ -6,36 +6,27 @@
 """
 
 import argparse
+import json
 from pathlib import Path
 
 
 def load_dict(dict_file):
-    """從字典檔載入詞彙對照表"""
+    """從 JSON 字典檔載入詞彙對照表"""
     term_dict = {}
     
     if not Path(dict_file).exists():
         print(f'錯誤：字典檔不存在 - {dict_file}')
         return term_dict
     
-    with open(dict_file, 'r', encoding='utf-8') as f:
-        for line_num, line in enumerate(f, 1):
-            line = line.strip()
-            
-            # 跳過空行和註釋
-            if not line or line.startswith('#'):
-                continue
-            
-            # 解析格式：舊詞=新詞
-            if '=' not in line:
-                print(f'警告：第 {line_num} 行格式錯誤，已跳過 - {line}')
-                continue
-            
-            old_term, new_term = line.split('=', 1)
-            old_term = old_term.strip()
-            new_term = new_term.strip()
-            
-            if old_term and new_term:
-                term_dict[old_term] = new_term
+    try:
+        with open(dict_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            # 過濾掉以底線開頭的 key（如 _comment）
+            term_dict = {k: v for k, v in data.items() if not k.startswith('_')}
+    except json.JSONDecodeError as e:
+        print(f'錯誤：JSON 格式錯誤 - {e}')
+    except Exception as e:
+        print(f'錯誤：無法讀取 JSON 檔案 - {e}')
     
     return term_dict
 
@@ -122,14 +113,15 @@ def main():
         epilog='''
 使用範例:
   %(prog)s -i global_chs.ini -o global_cht_fixed.ini
-  %(prog)s -i input.txt -o output.txt -d custom_dict.txt
+  %(prog)s -i input.txt -o output.txt -d custom_dict.json
   %(prog)s -i input.txt -o output.txt -v
   
-字典檔格式 (term_dict.txt):
-  # 這是註釋
-  軟件=軟體
-  信息=資訊
-  數據=資料
+字典檔格式 (JSON):
+  {
+    "_comment": "註釋",
+    "軟件": "軟體",
+    "信息": "資訊"
+  }
         '''
     )
     
@@ -137,8 +129,8 @@ def main():
                         help='輸入文件路徑')
     parser.add_argument('-o', '--output',
                         help='輸出文件路徑')
-    parser.add_argument('-d', '--dict', default='term_dict.txt',
-                        help='字典檔路徑 (預設: term_dict.txt)')
+    parser.add_argument('-d', '--dict', default='term_dict.json',
+                        help='字典檔路徑 (預設: term_dict.json)')
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='顯示詳細替換信息')
     

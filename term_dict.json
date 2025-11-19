@@ -1,0 +1,20 @@
+{
+    "_comment": "台灣慣用詞字典檔 - 格式：大陸用詞作為 key，台灣用詞作為 value",
+    "艦隊管理器": "載具管理系統",
+    "艦隊管理器終端": "自動化載具管理系統",
+    "亥伯隆": "海柏利昂",
+    "工程翼": "工程部",
+    "研究翼": "研究部",
+    "<EM4>工程</EM4>翼": "<EM4>工程</EM4>部",
+    "<EM4>研究</EM4>翼": "<EM4>研究</EM4>部",
+    "復位": "重置",
+    "對介面": "對接口",
+    "特大": "超大",
+    "hud_aimable_aim_type_short_pip_aiming=預瞄點": "hud_aimable_aim_type_short_pip_aiming=PIP",
+    "hud_aimable_aim_type_short_target_painting=精確": "hud_aimable_aim_type_short_target_painting=PRE",
+    "hud_aimable_gimbal_state_short_fixed=固定": "hud_aimable_gimbal_state_short_fixed=FXD",
+    "hud_aimable_gimbal_state_short_unlocked=手動": "hud_aimable_gimbal_state_short_unlocked=MAN",
+    "hud_gimbal_mode_short_auto=自動": "hud_gimbal_mode_short_auto=AUTO",
+    "hud_gimbal_mode_short_fixed=固定": "hud_gimbal_mode_short_fixed=FXD",
+    "hud_gimbal_mode_short_manual=手動": "hud_gimbal_mode_short_manual=MAN"
+}
