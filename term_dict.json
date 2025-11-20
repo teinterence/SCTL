@@ -19,5 +19,11 @@
     "hud_aimable_gimbal_state_short_unlocked=手動": "hud_aimable_gimbal_state_short_unlocked=MAN",
     "hud_gimbal_mode_short_auto=自動": "hud_gimbal_mode_short_auto=AUTO",
     "hud_gimbal_mode_short_fixed=固定": "hud_gimbal_mode_short_fixed=FXD",
-    "hud_gimbal_mode_short_manual=手動": "hud_gimbal_mode_short_manual=MAN"
+    "hud_gimbal_mode_short_manual=手動": "hud_gimbal_mode_short_manual=MAN",
+    "Nyx=尼克斯星系": "Nyx=Nyx System",
+    "ui_pregame_nyx_name=尼克斯星系": "ui_pregame_nyx_name=Nyx System",
+    "Nyx_Pyro_JPStation=派羅星門": "Nyx_Pyro_JPStation=Pyro Gateway",
+    "Nyx_Pyro_JPStation_clinic=派羅星門診所": "Nyx_Pyro_JPStation_clinic=Pyro Gateway Clinic",
+    "Nyx_Stanton_JPStation=斯坦頓星門": "Nyx_Stanton_JPStation=Stanton Gateway",
+    "Nyx_Stanton_JPStation_clinic=斯坦頓星門診所": "Nyx_Stanton_JPStation_clinic=Stanton Gateway Clinic"
 }
